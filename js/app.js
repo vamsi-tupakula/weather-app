@@ -8,7 +8,7 @@ const feels_like = document.querySelector('.feels-like');
 const humidity = document.querySelector('.humidity');
 
 let api;
-let apiId;
+let apiId; // write your api id here.
 
 input.addEventListener('keyup', (e) => {
     if (e.key == 'Enter' && input.value != '') {
@@ -39,4 +39,23 @@ function details(info) {
     feels_like.innerHTML = `${info.main.feels_like}°C<br>feels like`;
     humidity.innerHTML = `${info.main.humidity}<br>humidity`;
     city_name.innerHTML = `${info.name}, ${info.sys.country}`;
+}
+
+detect_btn.addEventListener('click', () => {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(onSuccess,onError);
+    }
+    else{
+        alert("sorry! your browser does not support geolocation.");
+    }
+});
+
+function onSuccess(pos) {
+    const {latitude,longitude} = pos.coords;
+    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiId}`;
+    fetchData();
+}
+
+function onError(error) {
+    alert(error.message);
 }
