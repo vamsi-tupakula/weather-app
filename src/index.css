@@ -1,0 +1,114 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  background-repeat: no-repeat;
+  /* background: linear-gradient(-45deg, #bd7171, #5bb9d6);*/
+  background-image: radial-gradient(#bebbff, #00687d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.city-input {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #5c5c5c;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.city-input .head {
+  font-size: 2em;
+  font-weight: 600;
+  border-bottom: 2px solid #c0c0c0;
+  padding: 8px 0;
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+.city-input .input {
+  width: 100%;
+  outline: none;
+  text-align: center;
+  border: 1px solid #353535;
+  font-size: 1.5em;
+  padding: 8px 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.city-input .separator {
+  width: 100%;
+  height: 1px;
+  background: #414141;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.city-input .separator::after {
+  content: "OR";
+  background-color: #ffffff;
+  padding: 0 5px;
+}
+.city-input .detect-btn {
+  width: 100%;
+  font-size: 1.3em;
+  border: none;
+  color: #ffffff;
+  padding: 7px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #51926e;
+}
+.city-input .detect-btn:hover {
+  background-color: #52ac7a;
+}
+.details-area {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.details-area .image {
+  width: 50%;
+  background-image: url("https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.details-area .details {
+  width: 50%;
+}
+.details-area .temp {
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+}
+.details-area .city-name {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #838383;
+  text-align: center;
+}
+.details-area .extras {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+/* showing and hiding info */
+.active {
+  display: flex;
+}
+.inactive {
+  display: none;
+}
